@@ -6,7 +6,7 @@ const sqlite3 = require("sqlite3");
 const db = new sqlite3.Database("src/database/stockDatabase.db", (err) => {
 
   if(err){
-    console.error("Error al abrir base de datos:", err.message);
+    console.error("Error al abrir base de datos: ", err.message);
   }else{
 
     console.log("Conectado a la base de datos.");
@@ -29,11 +29,6 @@ const db = new sqlite3.Database("src/database/stockDatabase.db", (err) => {
 
 const app = express();
 const port = 3001;
-
-const os = require("node:os");
-
-
-console.log (os.uptime() / 60)
 
 app.use(cors());
 app.use(bodyParser.json());
